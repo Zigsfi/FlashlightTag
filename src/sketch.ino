@@ -8,7 +8,7 @@
 int red, blue, green;
 int stuff[5] = {5, 6, A2, A4, A3};
 int things[5] = {20, 70, 120, 200, 230};
-
+int score = 5;
 
 void setup()
 {
@@ -30,10 +30,10 @@ void loop()
     red = analogRead(A5);
     analogWrite(RED, red);
     //analogWrite(3, red);
-    for (int x = 0; x < 5; x++) {
-        if (red > things[x])
-            digitalWrite(stuff[x], HIGH);
-        else
-            digitalWrite(stuff[x], LOW);
+    for (int x = 0; x < score; x++) {
+        digitalWrite(stuff[x], HIGH);
+    }
+    for (int x = score; x < 5; x++) {
+        digitalWrite(stuff[x], LOW);
     }
 }
